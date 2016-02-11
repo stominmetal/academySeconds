@@ -45,6 +45,7 @@ public class hoursCalc extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        fieldSeconds.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldSeconds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldSecondsActionPerformed(evt);
@@ -56,6 +57,7 @@ public class hoursCalc extends javax.swing.JFrame {
             }
         });
 
+        fieldMinutes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldMinutes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldMinutesActionPerformed(evt);
@@ -67,6 +69,7 @@ public class hoursCalc extends javax.swing.JFrame {
             }
         });
 
+        fieldHours.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fieldHours.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldHoursActionPerformed(evt);
@@ -207,7 +210,7 @@ public class hoursCalc extends javax.swing.JFrame {
 
     private void fieldSecondsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldSecondsKeyReleased
         this.c = parseInt(this.fieldSeconds.getText());
-        if(this.c > 59){
+        if(this.c > 59 || this.c <= 0){
             this.errorB.setText(this.c + " seconds is bigger than 59 seconds. Insert correct value!");
             
         }else{
@@ -217,7 +220,7 @@ public class hoursCalc extends javax.swing.JFrame {
 
     private void fieldMinutesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldMinutesKeyReleased
         this.b = parseInt(this.fieldMinutes.getText());
-        if(this.b > 59){
+        if(this.b > 59 || this.b <= 0){
             this.errorB.setText(this.b + " minutes is bigger than 59 minutes. Insert correct value!");
             
         }else{
@@ -227,9 +230,9 @@ public class hoursCalc extends javax.swing.JFrame {
 
     private void fieldHoursKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldHoursKeyReleased
         this.a = parseInt(this.fieldHours.getText());
-        if(this.a > 23){
-            this.errorB.setText(this.a + " hours is bigger than 23 hours. Insert correct value!");
-            
+
+        if(this.a > 23 || this.a <= 0){
+            this.errorB.setText("Insert correct value, between (0 and 23)!");         
         }else{
             this.errorB.setText("");
         }
@@ -270,10 +273,10 @@ public class hoursCalc extends javax.swing.JFrame {
         });
     }
     
-    private int a = 0;
-    private int b = 0;
-    private int c = 0;
-    private int suma = 0;
+    private Integer a = 0;
+    private Integer b = 0;
+    private Integer c = 0;
+    private Integer suma = 0;
     private Boolean error = false;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

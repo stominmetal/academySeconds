@@ -124,7 +124,7 @@ public class hoursCalc extends javax.swing.JFrame {
                 .addComponent(errorB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(81, 81, 81)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(39, 39, 39)
@@ -152,13 +152,13 @@ public class hoursCalc extends javax.swing.JFrame {
                                 .addComponent(fieldMinutes, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(fieldSeconds, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(errorB, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addComponent(errorB, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lHours)
@@ -211,7 +211,7 @@ public class hoursCalc extends javax.swing.JFrame {
     private void fieldSecondsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldSecondsKeyReleased
         this.c = parseInt(this.fieldSeconds.getText());
         if(this.c > 59 || this.c <= 0){
-            this.errorB.setText(this.c + " seconds is bigger than 59 seconds. Insert correct value!");
+            this.errorB.setText("Insert correct value for hours, between (0 and 59)! " + this.c + " seconds is not correct.");
             
         }else{
             this.errorB.setText("");
@@ -221,7 +221,7 @@ public class hoursCalc extends javax.swing.JFrame {
     private void fieldMinutesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldMinutesKeyReleased
         this.b = parseInt(this.fieldMinutes.getText());
         if(this.b > 59 || this.b <= 0){
-            this.errorB.setText(this.b + " minutes is bigger than 59 minutes. Insert correct value!");
+            this.errorB.setText("Insert correct value for hours, between (0 and 59)! " + this.b + " minutes is not correct.");
             
         }else{
             this.errorB.setText("");
@@ -232,7 +232,7 @@ public class hoursCalc extends javax.swing.JFrame {
         this.a = parseInt(this.fieldHours.getText());
 
         if(this.a > 23 || this.a <= 0){
-            this.errorB.setText("Insert correct value, between (0 and 23)!");         
+            this.errorB.setText("Insert correct value for hours, between (0 and 23)! " + this.a + " hours is not correct.");         
         }else{
             this.errorB.setText("");
         }
